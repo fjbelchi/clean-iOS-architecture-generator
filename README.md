@@ -25,3 +25,65 @@ $ ./iosgen.rb screen FJB Notifications
       create  ViewControllers/FJBNotifications/FJBNotifications.h
       create  ViewControllers/FJBNotifications/FJBNotifications.m
 ```
+
+Example of Spec:
+
+```json
+{
+  "screens": [
+    {
+      "UIViewController": {
+        "ViewControlerName": "FJBNotificationViewController",
+        "TableView": true
+      },
+      "ViewModel": {
+        "ViewModelName": "FJBNotificationsViewModel",
+        "Properties": [
+          {
+            "Type": "NSIndexPath",
+            "Name": "selectedIndexPath"
+          }
+        ],
+        "Actions": [
+          {
+            "RetunType": "void",
+            "Name": "didTapOnCloseButton"
+          },
+          {
+            "RetunType": "void",
+            "Name": "didTapAtIndexPath:",
+            "Arguments": [
+              {
+                "Type": "NSIndexPath",
+                "Name": "indexPath"
+              }
+            ]
+          }
+        ],
+        "Interactors": [
+          {
+            "InteractorName": "FJBNotificationsApiInteractor",
+            "Properties": [],
+            "Actions": [
+              {
+                "ReturnType": "void",
+                "Name": "markNotificationAsRead:onCompletionBlock:",
+                "Arguments": [
+                  {
+                    "Type": "NSString",
+                    "Name": "notificationsId"
+                  },
+                  {
+                    "Type": "^()",
+                    "Name": "completionBlock"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+```
