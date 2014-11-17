@@ -34,7 +34,13 @@ Example of Spec:
     {
       "UIViewController": {
         "ViewControlerName": "FJBNotificationViewController",
-        "TableView": true
+        "TableView": true,
+        "Subviews": [
+          {
+            "Type": "FJBHeaderView",
+            "Name": "headerView"
+          }
+        ]
       },
       "ViewModel": {
         "ViewModelName": "FJBNotificationsViewModel",
