@@ -1,0 +1,20 @@
+#import <%="\"#{@viewcontroller_name}.h\""%>
+
+@interface <%=@viewcontroller_name %> () <%="<UITableViewDelegate>" if @table_view %>
+<% if @table_view %>
+@property (nonatomic, strong) UITableView *tableView;
+<% end %>
+@end
+
+@implementation <%=@viewcontroller_name %>
+<% if @table_view %>
+- (UITableView *)tableView
+{
+    if (_tableView) {
+        return _tableView;
+    }
+
+    return _tableView;
+}
+<% end %>
+@end
