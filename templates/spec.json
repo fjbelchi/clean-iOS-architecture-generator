@@ -1,13 +1,13 @@
 {
   "screens": [
     {
-      "UIViewController": {
+      "viewController": {
         "ViewControlerName": "FJBNotificationViewController",
-        "TableView": true,
-        "Subviews": [
+        "tableView": true,
+        "subviews": [
           {
-            "Type": "FJBHeaderView",
-            "Name": "headerView"
+            "type": "FJBHeaderView",
+            "name": "headerView"
           }
         ]
       },
@@ -15,22 +15,24 @@
         "ViewModelName": "FJBNotificationsViewModel",
         "Properties": [
           {
-            "Type": "NSIndexPath",
-            "Name": "selectedIndexPath"
+            "type": "NSIndexPath",
+            "name": "selectedIndexPath"
           }
         ],
         "Actions": [
           {
-            "RetunType": "void",
-            "Name": "didTapOnCloseButton"
+            "description": "Dismiss the ViewController when the button is tapped",
+            "retun_type": "void",
+            "name": "didTapOnCloseButton"
           },
           {
-            "RetunType": "void",
-            "Name": "didTapAtIndexPath:",
-            "Arguments": [
+            "description": "Mark notification as read when the notification is selected",
+            "retun_type": "void",
+            "name": "didTapAtIndexPath:",
+            "arguments": [
               {
-                "Type": "NSIndexPath",
-                "Name": "indexPath"
+                "type": "NSIndexPath",
+                "name": "indexPath"
               }
             ]
           }
@@ -41,16 +43,17 @@
             "Properties": [],
             "Actions": [
               {
-                "ReturnType": "void",
-                "Name": "markNotificationAsRead:onCompletionBlock:",
-                "Arguments": [
+                "description": "Perform API request to mark a notification as read",
+                "return_type": "void",
+                "name": "markNotificationAsRead:onCompletionBlock:",
+                "arguments": [
                   {
-                    "Type": "NSString",
-                    "Name": "notificationsId"
+                    "type": "NSString",
+                    "name": "notificationsId"
                   },
                   {
-                    "Type": "^()",
-                    "Name": "completionBlock"
+                    "type": "^()",
+                    "name": "completionBlock"
                   }
                 ]
               }
@@ -96,10 +99,11 @@
 
 // Actions
 {
-  "RetunType": "void",
-  "Name": "didTapOnCloseButton:",
-  "Arguments": [{
-    "Type" : "UIButton",
-    "Name" : "closeButton"
+  "description": "Dismiss the ViewController when the button is tapped",
+  "retun_type": "void",
+  "name": "didTapOnCloseButton:",
+  "arguments": [{
+    "type" : "UIButton",
+    "name" : "closeButton"
     }]
 }

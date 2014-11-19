@@ -13,4 +13,5 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'pry'
+  gem 'json'
 end
