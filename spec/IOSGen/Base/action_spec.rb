@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'json'
 
+include IOSGen::Base
+
 describe IOSGen::Base::Action do
 
   describe '#Properties' do
@@ -8,7 +10,7 @@ describe IOSGen::Base::Action do
     description = 'Dismiss the ViewController when the button is tapped'
     return_type = 'void'
     name = 'didTapOnCloseButton'
-    arguments = [IOSGen::Base::Property.new(type: 'UIButton',
+    arguments = [Property.new(type: 'UIButton',
                                             name: 'closeButton')]
     action = described_class.new(description: description,
                                  return_type: return_type, name: name,
@@ -29,7 +31,7 @@ describe IOSGen::Base::Action do
     it 'has arguments' do
       expect(action.arguments.empty?).to be false
       property = action.arguments[0]
-      expect(property).to be_kind_of IOSGen::Base::Property
+      expect(property).to be_kind_of Property
     end
 
   end
@@ -54,7 +56,7 @@ describe IOSGen::Base::Action do
       expect(action.name).to eq('didTapOnCloseButton:')
       expect(action.arguments.empty?).to be false
       property = action.arguments[0]
-      expect(property).to be_kind_of IOSGen::Base::Property
+      expect(property).to be_kind_of Property
     end
 
   end

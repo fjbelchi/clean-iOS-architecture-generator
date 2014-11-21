@@ -1,8 +1,8 @@
 {
   "screens": [
     {
-      "viewController": {
-        "ViewControlerName": "FJBNotificationViewController",
+      "view_controller": {
+        "name": "FJBNotificationViewController",
         "tableView": true,
         "subviews": [
           {
@@ -11,15 +11,15 @@
           }
         ]
       },
-      "ViewModel": {
-        "ViewModelName": "FJBNotificationsViewModel",
-        "Properties": [
+      "view_model": {
+        "name": "FJBNotificationsViewModel",
+        "properties": [
           {
             "type": "NSIndexPath",
             "name": "selectedIndexPath"
           }
         ],
-        "Actions": [
+        "actions": [
           {
             "description": "Dismiss the ViewController when the button is tapped",
             "retun_type": "void",
@@ -37,11 +37,12 @@
             ]
           }
         ],
-        "Interactors": [
+        "interactors": [
           {
-            "InteractorName": "FJBNotificationsApiInteractor",
-            "Properties": [],
-            "Actions": [
+            "description" : "Api Interactions required by Notification ViewModel",
+            "name": "FJBNotificationsApiInteractor",
+            "properties": [],
+            "actions": [
               {
                 "description": "Perform API request to mark a notification as read",
                 "return_type": "void",
@@ -81,14 +82,26 @@
 
 // Interactor
 {
-  "InteractorName": "WAMNotificationsApiInteractor",
-  "Properties": [
+  "description" : "Api Interactions required by Notification ViewModel",
+  "name": "FJBNotificationsApiInteractor",
+  "properties": [],
+  "actions": [
     {
-      "Type": "NSIndexPath",
-      "Name": "selectedIndexPath"
+      "description": "Perform API request to mark a notification as read",
+      "return_type": "void",
+      "name": "markNotificationAsRead:onCompletionBlock:",
+      "arguments": [
+        {
+          "type": "NSString",
+          "name": "notificationsId"
+        },
+        {
+          "type": "^()",
+          "name": "completionBlock"
+        }
+      ]
     }
-  ],
-  "Actions": [ "didTapOnCloseButton", "didTapAtIndexPath" ]
+  ]
 }
 
 // Property, Subviews
