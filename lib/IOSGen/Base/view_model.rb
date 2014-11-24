@@ -5,14 +5,14 @@ module IOSGen
       attr_accessor :description, :name, :properties, :actions, :interactors
 
       def initialize(params = {})
-        @description = params[:description]
-        @name = params[:name]
+        @description = params[:description] ||= params['description']
+        @name = params[:name] ||= params['name']
         @properties = []
         @actions = []
         @interactors = []
-        properties = params[:properties]
-        actions = params[:actions]
-        interactors = params[:interactors]
+        properties = params[:properties] ||= params['properties']
+        actions = params[:actions] ||= params['actions']
+        interactors = params[:interactors] ||= params['interactors']
         parse_optionals(properties, actions, interactors)
       end
 
