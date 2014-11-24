@@ -2,21 +2,22 @@ require 'spec_helper'
 include IOSGen::Base
 
 describe IOSGen::Base::Interactor do
+
+  description = 'Api Interactions required by Notification ViewModel'
+
+  name = 'FJBNotificationsApiInteractor'
+
+  properties = [Property.new(type: 'TestType', name: 'TestName'),
+                Property.new(type: 'TestType2', name: 'TestName2')]
+
+  action = Action.new(description: 'Perform API request to mark a notification as read',
+                      return_type: 'void',
+                      name: 'markNotificationAsRead:onCompletionBlock:',
+                      arguments: [Property.new(type: 'NSString', name: 'notificationId'),
+                                  Property.new(type: '^()', name: 'completionBlock')])
+  actions = [action]
+
   describe '#Properties' do
-
-    description = 'Api Interactions required by Notification ViewModel'
-
-    name = 'WAMNotificationsApiInteractor'
-
-    properties = [Property.new(type: 'TestType', name: 'TestName'),
-                  Property.new(type: 'TestType2', name: 'TestName2')]
-
-    actions = [Action.new(description: 'Perform API request to mark a notification as read',
-                          return_type: 'void',
-                          name: 'markNotificationAsRead:onCompletionBlock:',
-                          arguments: [Property.new(type: 'NSString', name: 'notificationId'),
-                                      Property.new(type: '^()', name: 'completionBlock')])]
-
     interactor = described_class.new(description: description,
                                      name: name,
                                      properties: properties,
@@ -46,6 +47,15 @@ describe IOSGen::Base::Interactor do
       expect(action).to be_a Action
     end
 
+  end
+
+  describe 'Optional properties' do
+    interactor = described_class.new(description: description,
+                                     name: name,
+                                     actions: actions)
+    it 'has not properties' do
+      expect(interactor.properties.empty?).to be true
+    end
   end
 
   describe '#JSON' do
@@ -89,11 +99,11 @@ describe IOSGen::Base::Interactor do
     end
 
     it 'has to match description' do
-      expect(interactor.description).to eq('Api Interactions required by Notification ViewModel')
+      expect(interactor.description).to eq(description)
     end
 
     it 'has to match name' do
-      expect(interactor.name).to eq('FJBNotificationsApiInteractor')
+      expect(interactor.name).to eq(name)
     end
 
     it 'has to containt properties' do

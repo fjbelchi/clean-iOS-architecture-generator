@@ -9,7 +9,8 @@ module IOSGen
         @name = params[:name] ||= params['name']
         @properties = []
         @actions = []
-        parse_properties(params[:properties] ||= params['properties'])
+        properties = params[:properties] ||= params['properties']
+        parse_properties(properties) unless properties.nil?
         parse_actions(params[:actions] ||= params['actions'])
       end
 

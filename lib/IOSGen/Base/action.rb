@@ -10,7 +10,7 @@ module IOSGen
         @return_type = params[:return_type] ||= params['return_type']
         arguments = params[:arguments] ||= params['arguments']
         @arguments = []
-        parse_arguments(arguments)
+        parse_arguments(arguments) unless arguments.nil?
       end
 
       private
