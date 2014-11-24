@@ -11,7 +11,7 @@ describe IOSGen::Base::Action do
     return_type = 'void'
     name = 'didTapOnCloseButton'
     arguments = [Property.new(type: 'UIButton',
-                                            name: 'closeButton')]
+                              name: 'closeButton')]
     action = described_class.new(description: description,
                                  return_type: return_type, name: name,
                                  arguments: arguments)

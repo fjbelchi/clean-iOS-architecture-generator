@@ -7,8 +7,8 @@ module IOSGen
       def initialize(params = {})
         @description = params[:description] ||= params['description']
         @name = params[:name] ||= params['name']
-        @properties = Array.new
-        @actions = Array.new
+        @properties = []
+        @actions = []
         parse_properties(params[:properties] ||= params['properties'])
         parse_actions(params[:actions] ||= params['actions'])
       end

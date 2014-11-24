@@ -12,10 +12,10 @@ describe IOSGen::Base::Interactor do
                   Property.new(type: 'TestType2', name: 'TestName2')]
 
     actions = [Action.new(description: 'Perform API request to mark a notification as read',
-                                        return_type: 'void',
-                                        name: 'markNotificationAsRead:onCompletionBlock:',
-                                        arguments: [Property.new(type: 'NSString', name: 'notificationId'),
-                                                    Property.new(type: '^()', name: 'completionBlock')])]
+                          return_type: 'void',
+                          name: 'markNotificationAsRead:onCompletionBlock:',
+                          arguments: [Property.new(type: 'NSString', name: 'notificationId'),
+                                      Property.new(type: '^()', name: 'completionBlock')])]
 
     interactor = described_class.new(description: description,
                                      name: name,

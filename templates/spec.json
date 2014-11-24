@@ -12,6 +12,7 @@
         ]
       },
       "view_model": {
+        "description" : "State of NotificationViewController and perform bussiness logic",
         "name": "FJBNotificationsViewModel",
         "properties": [
           {
@@ -50,7 +51,7 @@
                 "arguments": [
                   {
                     "type": "NSString",
-                    "name": "notificationsId"
+                    "name": "notificationId"
                   },
                   {
                     "type": "^()",
@@ -93,7 +94,7 @@
       "arguments": [
         {
           "type": "NSString",
-          "name": "notificationsId"
+          "name": "notificationId"
         },
         {
           "type": "^()",
