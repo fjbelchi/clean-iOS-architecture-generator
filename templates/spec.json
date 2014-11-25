@@ -23,12 +23,12 @@
         "actions": [
           {
             "description": "Dismiss the ViewController when the button is tapped",
-            "retun_type": "void",
+            "return_type": "void",
             "name": "didTapOnCloseButton"
           },
           {
             "description": "Mark notification as read when the notification is selected",
-            "retun_type": "void",
+            "return_type": "void",
             "name": "didTapAtIndexPath:",
             "arguments": [
               {
@@ -114,7 +114,7 @@
 // Actions
 {
   "description": "Dismiss the ViewController when the button is tapped",
-  "retun_type": "void",
+  "return_type": "void",
   "name": "didTapOnCloseButton:",
   "arguments": [{
     "type" : "UIButton",

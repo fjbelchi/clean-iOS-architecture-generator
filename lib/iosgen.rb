@@ -3,9 +3,9 @@ require 'rubygems'
 require 'thor'
 require './generator'
 
-class IOSGen < Thor
-  register(IOSgen::Generator, 'screen', 'screen',
+class IOSgen < Thor
+  register(Generator, 'screen', 'screen',
   'Generate the files to create a new screen')
 end
 
-IOSGen.start
+IOSgen.start
