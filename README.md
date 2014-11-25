@@ -6,82 +6,67 @@ Clean iOS architecture generator
 
 Ruby gem to generate a clean iOS architecture
 
-Example:
-
-```
-$ ./iosgen.rb screen FJB Notifications
-[-] Name of ViewModel? FJBNotificationsViewModel
-[-] Name API Interactor? FJBNotificationsApiInteractor
-[-] Name Database Interactor? FJBNotificationsDbInteractor
-[-] Name Route Interactor?
-[-] Include a UITableView? [y, n] y
-[-] Name of the DataSource: FJBNotificationsDataSource
-      create  Interactor/Api/FJBNotificationsApiInteractorProtocol.h
-      create  Interactor/Api/FJBNotificationsApiInteractor.h
-      create  Interactor/Api/FJBNotificationsApiInteractor.m
-      create  ViewModels/FJBNotificationsViewModel/FJBNotificationsViewModelProtocol.h
-      create  ViewModels/FJBNotificationsViewModel/FJBNotificationsViewModel.h
-      create  ViewModels/FJBNotificationsViewModel/FJBNotificationsViewModel.m
-      create  ViewControllers/FJBNotifications/FJBNotifications.h
-      create  ViewControllers/FJBNotifications/FJBNotifications.m
-```
-
 Example of Spec:
 
 ```json
 {
   "screens": [
     {
-      "UIViewController": {
-        "ViewControlerName": "FJBNotificationViewController",
-        "TableView": true,
-        "Subviews": [
+      "view_controller": {
+        "name": "FJBNotificationViewController",
+        "tableView": true,
+        "subviews": [
           {
-            "Type": "FJBHeaderView",
-            "Name": "headerView"
+            "type": "FJBHeaderView",
+            "name": "headerView"
           }
         ]
       },
-      "ViewModel": {
-        "ViewModelName": "FJBNotificationsViewModel",
-        "Properties": [
+      "view_model": {
+        "description": "State of NotificationViewController and perform bussiness logic",
+        "name": "FJBNotificationsViewModel",
+        "properties": [
           {
-            "Type": "NSIndexPath",
-            "Name": "selectedIndexPath"
+            "type": "NSIndexPath",
+            "name": "selectedIndexPath"
           }
         ],
-        "Actions": [
+        "actions": [
           {
-            "RetunType": "void",
-            "Name": "didTapOnCloseButton"
+            "description": "Dismiss the ViewController when the button is tapped",
+            "return_type": "void",
+            "name": "didTapOnCloseButton"
           },
           {
-            "RetunType": "void",
-            "Name": "didTapAtIndexPath:",
-            "Arguments": [
+            "description": "Mark notification as read when the notification is selected",
+            "return_type": "void",
+            "name": "didTapAtIndexPath:",
+            "arguments": [
               {
-                "Type": "NSIndexPath",
-                "Name": "indexPath"
+                "type": "NSIndexPath",
+                "name": "indexPath"
               }
             ]
           }
         ],
-        "Interactors": [
+        "interactors": [
           {
-            "InteractorName": "FJBNotificationsApiInteractor",
-            "Properties": [],
-            "Actions": [
+            "description": "Api Interactions required by Notification ViewModel",
+            "name": "FJBNotificationsApiInteractor",
+            "properties": [],
+            "actions": [
               {
-                "ReturnType": "void",
-                "Name": "markNotificationAsRead:onCompletionBlock:",
-                "Arguments": [
+                "description": "Perform API request to mark a notification as read",
+                "return_type": "void",
+                "name": "markNotificationAsRead:onCompletionBlock:",
+                "arguments": [
                   {
-                    "Type": "NSString",
-                    "Name": "notificationsId"
+                    "type": "NSString",
+                    "name": "notificationId"
                   },
                   {
-                    "Type": "^()",
-                    "Name": "completionBlock"
+                    "type": "^()",
+                    "name": "completionBlock"
                   }
                 ]
               }
