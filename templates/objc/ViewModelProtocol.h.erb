@@ -1,0 +1,19 @@
+
+@protocol <%=@viewmodel_protocol_name%>;
+@protocol <%=@viewmodel_protocol_delegate %> <NSObject>
+@end
+
+@protocol <%="<#{@viewmodel_protocol_name}>"%> <NSObject>
+
+// -- Properties <% @view_model.properties.each do |property| %>
+<%="@property (nonatomic, strong) #{property.type} *#{property.name};"%><% end %>
+@property (nonatomic, weak) id<<%=@viewmodel_protocol_delegate %>> delegate
+
+// -- Actions
+<% @view_model.actions.each do |action| %>
+<%= "// #{action.description}" %>
+<% %>
+<%="- (#{action.return_type})#{action.name};"%>
+<% end %>
+
+@end
