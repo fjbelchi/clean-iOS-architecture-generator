@@ -6,7 +6,7 @@
         "tableView": true,
         "subviews": [
           {
-            "type": "FJBHeaderView",
+            "type": "FJBHeaderView *",
             "name": "headerView"
           }
         ]
@@ -16,7 +16,7 @@
         "name": "FJBNotificationsViewModel",
         "properties": [
           {
-            "type": "NSIndexPath",
+            "type": "NSIndexPath *",
             "name": "selectedIndexPath"
           }
         ],
@@ -32,7 +32,7 @@
             "name": "didTapAtIndexPath:",
             "arguments": [
               {
-                "type": "NSIndexPath",
+                "type": "NSIndexPath *",
                 "name": "indexPath"
               }
             ]
@@ -50,7 +50,7 @@
                 "name": "markNotificationAsRead:onCompletionBlock:",
                 "arguments": [
                   {
-                    "type": "NSString",
+                    "type": "NSString *",
                     "name": "notificationId"
                   },
                   {
