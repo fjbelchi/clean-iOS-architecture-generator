@@ -2,10 +2,6 @@
 
 @interface <%= @viewmodel_name %> ()
 
-<% if !@api_interactor.empty? %>
-<%="@property (nonatomic, strong) id<#{@api_interactor}> apiInteractor;"%>
-<% end %>
-
 @end
 
 @implementation <%= @viewmodel_name %>

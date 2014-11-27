@@ -11,7 +11,7 @@ describe IOSGen::Generator::ObjcActionGenerator do
       }'
 
     hash = JSON.parse(action_json)
-    action = Action.new(hash)
+    action = BaseFactory.new.parse_action(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do
@@ -41,7 +41,7 @@ describe IOSGen::Generator::ObjcActionGenerator do
     }'
 
     hash = JSON.parse(action_json)
-    action = Action.new(hash)
+    action = BaseFactory.new.parse_action(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do
@@ -75,7 +75,7 @@ describe IOSGen::Generator::ObjcActionGenerator do
     }'
 
     hash = JSON.parse(action_json)
-    action = Action.new(hash)
+    action = BaseFactory.new.parse_action(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do

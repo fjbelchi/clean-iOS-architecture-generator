@@ -54,73 +54,7 @@ describe IOSGen::Base::Interactor do
                                      name: name,
                                      actions: actions)
     it 'has not properties' do
-      expect(interactor.properties.empty?).to be true
+      expect(interactor.properties.nil?).to be true
     end
-  end
-
-  describe '#JSON' do
-    json = '{
-      "description" : "Api Interactions required by Notification ViewModel",
-      "name": "FJBNotificationsApiInteractor",
-      "properties": [
-        {
-          "type": "UIButton",
-          "name": "button"
-        },
-        {
-          "type": "UIButton",
-          "name": "button2"
-        }
-      ],
-      "actions": [
-        {
-          "description": "Perform API request to mark a notification as read",
-          "return_type": "void",
-          "name": "markNotificationAsRead:onCompletionBlock:",
-          "arguments": [
-            {
-              "type": "NSString",
-              "name": "notificationId"
-            },
-            {
-              "type": "^()",
-              "name": "completionBlock"
-            }
-          ]
-        }
-      ]
-    }'
-
-    hash = JSON.parse(json)
-    interactor = described_class.new(hash)
-
-    it 'has to parse JSON' do
-      expect(interactor).to be_a Interactor
-    end
-
-    it 'has to match description' do
-      expect(interactor.description).to eq(description)
-    end
-
-    it 'has to match name' do
-      expect(interactor.name).to eq(name)
-    end
-
-    it 'has to containt properties' do
-      expect(interactor.properties).to be_a Array
-      expect(interactor.properties.length).to eq(2)
-      property0 = interactor.properties[0]
-      property1 = interactor.properties[1]
-      expect(property0).to be_a Property
-      expect(property1).to be_a Property
-    end
-
-    it 'has to containt actions' do
-      expect(interactor.actions).to be_a Array
-      expect(interactor.actions.length).to eq(1)
-      action = interactor.actions[0]
-      expect(action).to be_a Action
-    end
-
   end
 end

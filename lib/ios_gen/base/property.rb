@@ -5,8 +5,8 @@ module IOSGen
       attr_accessor :type, :name
 
       def initialize(params = {})
-        @type = params[:type] ||= params['type']
-        @name = params[:name] ||= params['name']
+        @type = params[:type]
+        @name = params[:name]
       end
     end
   end
