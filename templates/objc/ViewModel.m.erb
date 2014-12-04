@@ -1,9 +1,14 @@
 #import <%="#{@viewmodel_name}.h"%>
+#import <%=@formatter.view_model_header_file %>
 
 @interface <%= @viewmodel_name %> ()
 
 @end
 
-@implementation <%= @viewmodel_name %>
+@implementation <%=@viewmodel.name %>
+
+#pragma mark - Actions
+
+<%=@formatter.view_model_actions_impl %>
 
 @end

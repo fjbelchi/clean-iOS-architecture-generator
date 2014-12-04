@@ -10,10 +10,6 @@
 @property (nonatomic, weak) id<<%=@viewmodel_protocol_delegate %>> delegate
 
 // -- Actions
-<% @view_model.actions.each do |action| %>
-<%= "// #{action.description}" %>
-<% %>
-<%="- (#{action.return_type})#{action.name};"%>
-<% end %>
+<%=@formatter.view_model_actions_header %>
 
 @end
