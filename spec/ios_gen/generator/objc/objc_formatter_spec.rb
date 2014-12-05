@@ -28,7 +28,7 @@ describe IOSGen::Generator::Objc::Formatter do
                                                                               name: 'completionBlock')
                                                                 ])])]
 
-  describe '#Properties' do
+  describe '#Properties ViewModel' do
 
     view_model = ViewModel.new(description: description,
                                name: name,
@@ -62,6 +62,12 @@ describe IOSGen::Generator::Objc::Formatter do
 
     it 'has view_model_impl_file_name' do
       expect(formatter.view_model_impl_file_name).to eq('FJBNotificationsViewModel.m')
+    end
+
+    it 'has view_model_protocol_name' do
+    end
+
+    it 'has view_model_protocol_delegate' do
     end
   end
 

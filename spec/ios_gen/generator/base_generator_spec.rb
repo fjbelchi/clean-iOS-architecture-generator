@@ -33,7 +33,9 @@ describe IOSGen::Generator::BaseGenerator do
 
   describe '#Methods' do
 
-    it 'has generate method' do
+    describe '#Objc' do
+      it 'has generate method' do
+      end
     end
 
   end

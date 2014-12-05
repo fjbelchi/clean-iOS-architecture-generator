@@ -7,6 +7,11 @@ Dir['./ios_gen/**/*.rb'].each { |file| require file }
 
 # CLI for generator
 class IOSgen < Thor
+  include Thor::Actions
+
+  def self.source_root
+    File.dirname(__FILE__)
+  end
 
   desc 'spec', 'Generate files with spec file'
   method_option :destination, aliases: '-d', desc: 'destination path'

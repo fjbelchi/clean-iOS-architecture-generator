@@ -5,15 +5,25 @@ module IOSGen
       class Formatter
         attr_accessor :view_model, :interactors
         attr_reader :view_model_header_file_name, :view_model_impl_file_name
+        attr_reader :view_model_protocol_name, :view_model_protocol_delegate
         attr_reader :view_model_properties_header
         attr_reader :view_model_actions_header, :view_model_actions_impl
 
         def view_model_header_file_name
-          "#{view_model.name}.h"
+          puts @view_model
+          "#{@view_model.name}.h"
         end
 
         def view_model_impl_file_name
-          "#{view_model.name}.m"
+          "#{@view_model.name}.m"
+        end
+
+        def view_model_protocol_name
+          ''
+        end
+
+        def view_model_protocol_delegate
+          ''
         end
 
         def view_model_properties_header
