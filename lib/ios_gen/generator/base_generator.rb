@@ -18,9 +18,6 @@ module IOSGen
 
       def generate
         generate_view_model
-      #  template('../../../templates/objc/ViewModelProtocol.h.erb', "ViewModels/#{@view_model.name}/#{@view_model.name}protocol.h")
-      #  template('../../../templates/objc/ViewModel.h.erb', "./ViewModels/#{@view_model.name}/#{@view_model.name}.h")
-      #  template('../../../templates/objc/ViewModel.m.erb', "ViewModels/#{@view_model.name}/#{@view_model.name}.m")
       end
 
       private
@@ -35,21 +32,17 @@ module IOSGen
       end
 
       def generate_view_model
-        view_model_protocol_path = File.expand_path('templates/objc/ViewModelProtocol.h.erb')
-        renderer_protocol = ERB.new(File.read(view_model_protocol_path))
-        view_model_header_path = File.expand_path('templates/objc/ViewModel.h.erb')
-        renderer_header = ERB.new(File.read(view_model_header_path))
-        view_model_impl_path = File.expand_path('templates/objc/ViewModel.m.erb')
-        renderer_impl = ERB.new(File.read(view_model_impl_path))
+        @formatter.generate_view_model do |file_name, template|
+          generate_template(file_name, template)
+          puts "Created #{file_name}"
+        end
+      end
 
-        File.open("#{@view_model.name}-Protocol.h", 'w') do |f|
-          f.write renderer_protocol.result(binding)
-        end
-        File.open("#{@view_model.name}.h", 'w') do |f|
-          f.write renderer_header.result(binding)
-        end
-        File.open("#{@view_model.name}.m", 'w') do |f|
-          f.write renderer_impl.result(binding)
+      def generate_template(name, template, destination = '')
+        path_template = File.expand_path(template)
+        renderer = ERB.new(File.read(path_template))
+        File.open(name, 'w') do |f|
+          f.write renderer.result(binding)
         end
       end
     end
