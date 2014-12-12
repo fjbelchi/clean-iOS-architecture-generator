@@ -4,6 +4,9 @@ module IOSGen
   module Generator
     # Base Generator
     class BaseGenerator
+      VIEWMODEL_KEY = 'view_model'
+      INTERACTORS_KEY = 'interactors'
+
       attr_reader :type, :file_spec, :destination
       attr_reader :view_model, :interactors
       attr_reader :formatter
@@ -26,8 +29,8 @@ module IOSGen
         file = File.read(@file_spec)
         hash = JSON.parse(file)
         factory = IOSGen::Base::BaseFactory.new
-        @interactors = factory.parse_interactors(hash['interactors'])
-        @view_model = factory.parse_view_model(hash['view_model'])
+        @interactors = factory.parse_interactors(hash[INTERACTORS_KEY])
+        @view_model = factory.parse_view_model(hash[VIEWMODEL_KEY])
         @formatter.view_model = @view_model
       end
 

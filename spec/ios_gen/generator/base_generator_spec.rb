@@ -25,8 +25,8 @@ describe IOSGen::Generator::BaseGenerator do
       expect(generator.view_model).to be_a ViewModel
     end
 
-    it 'has Interactors' do
-      expect(generator.interactors).to be_a Array
+    it 'has ViewModel.Interactors' do
+      expect(generator.view_model.interactors).to be_a Array
     end
 
   end
