@@ -87,8 +87,8 @@ describe IOSGen::Generator::Objc::Formatter do
     formatter = described_class.new
     formatter.view_model = view_model
 
-    it 'has to yield 3 times' do
-      expect { |b| formatter.generate_view_model(&b) }.to yield_control.exactly(3).times
+    it 'has to yield 6 times' do
+      expect { |b| formatter.generate_view_model(&b) }.to yield_control.exactly(6).times
     end
 
     file_names = []
@@ -108,9 +108,25 @@ describe IOSGen::Generator::Objc::Formatter do
       expect(file_names[1]).to eq(formatter.view_model_header_file_name)
       expect(templates[1]).to eq('templates/objc/ViewModel.h.erb')
     end
-    it 'has to return implementation file name template' do
+
+    it 'has to return implementation file name and template' do
       expect(file_names[2]).to eq(formatter.view_model_impl_file_name)
       expect(templates[2]).to eq('templates/objc/ViewModel.m.erb')
+    end
+
+    it 'has to return interactor protocol file name and template' do
+      expect(file_names[3]).to eq(formatter.interactor_protocol_file_name)
+      expect(templates[3]).to eq('templates/objc/InteractorProtocol.h.erb')
+    end
+
+    it 'has to return interactor header file name and template' do
+      expect(file_names[4]).to eq(formatter.interactor_header_file_name)
+      expect(templates[4]).to eq('templates/objc/Interactor.h.erb')
+    end
+
+    it 'has to return interactor implementation file name and template' do
+      expect(file_names[5]).to eq(formatter.interactor_impl_file_name)
+      expect(templates[5]).to eq('templates/objc/Interactor.m.erb')
     end
 
   end
