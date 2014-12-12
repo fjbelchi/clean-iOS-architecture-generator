@@ -1,0 +1,64 @@
+{
+  "view_controller": {
+    "name": "FJBNotificationViewController",
+    "tableView": true,
+    "subviews": [
+      {
+        "type": "FJBHeaderView *",
+        "name": "headerView"
+      }
+    ]
+  },
+  "view_model": {
+    "description" : "State of NotificationViewController and perform bussiness logic",
+    "name": "FJBNotificationsViewModel",
+    "properties": [
+      {
+        "type": "NSIndexPath *",
+        "name": "selectedIndexPath"
+      }
+    ],
+    "actions": [
+      {
+        "description": "Dismiss the ViewController when the button is tapped",
+        "return_type": "void",
+        "name": "didTapOnCloseButton"
+      },
+      {
+        "description": "Mark notification as read when the notification is selected",
+        "return_type": "void",
+        "name": "didTapAtIndexPath:",
+        "arguments": [
+          {
+            "type": "NSIndexPath *",
+            "name": "indexPath"
+          }
+        ]
+      }
+    ],
+    "interactors": [
+      {
+        "description" : "Api Interactions required by Notification ViewModel",
+        "name": "FJBNotificationsApiInteractor",
+        "properties": [],
+        "actions": [
+          {
+            "description": "Perform API request to mark a notification as read",
+            "return_type": "void",
+            "name": "markNotificationAsRead:onCompletionBlock:",
+            "arguments": [
+              {
+                "type": "NSString *",
+                "name": "notificationId"
+              },
+              {
+                "type": "^()",
+                "name": "completionBlock"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

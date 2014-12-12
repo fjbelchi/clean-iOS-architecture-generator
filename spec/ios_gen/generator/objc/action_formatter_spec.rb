@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe IOSGen::Generator::ObjcActionGenerator do
+describe IOSGen::Generator::Objc::ActionFormatter do
 
   describe 'Action without arguments' do
 
@@ -11,7 +11,7 @@ describe IOSGen::Generator::ObjcActionGenerator do
       }'
 
     hash = JSON.parse(action_json)
-    action = Action.new(hash)
+    action = BaseFactory.new.parse_action(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do
@@ -30,18 +30,12 @@ describe IOSGen::Generator::ObjcActionGenerator do
 
   describe 'Actions with an argument' do
 
-    action_json = '{
-      "description": "Dismiss the ViewController when the button is tapped",
-      "return_type": "void",
-      "name": "didTapOnCloseButton:",
-      "arguments": [{
-        "type" : "UIButton *",
-        "name" : "closeButton"
-        }]
-    }'
+    action = Action.new(description: 'Dismiss the ViewController when the button is tapped',
+                        name: 'didTapOnCloseButton:',
+                        return_type: 'void',
+                        arguments: [Property.new(type: 'UIButton *',
+                                                 name: 'closeButton')])
 
-    hash = JSON.parse(action_json)
-    action = Action.new(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do
@@ -75,7 +69,7 @@ describe IOSGen::Generator::ObjcActionGenerator do
     }'
 
     hash = JSON.parse(action_json)
-    action = Action.new(hash)
+    action = BaseFactory.new.parse_action(hash)
     action_generator = described_class.new
 
     it 'has to generate interface format' do

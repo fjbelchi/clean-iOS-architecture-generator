@@ -23,21 +23,4 @@ describe IOSGen::Base::Property do
 
   end
 
-  describe '#JSON' do
-
-    json = '{
-      "type": "UIButton",
-      "name": "button"
-    }'
-
-    it 'expect to parse JSON' do
-      hash = JSON.parse(json)
-      property = described_class.new(hash)
-      expect(property).to be_a described_class
-      expect(property.type).to eq('UIButton')
-      expect(property.name).to eq('button')
-    end
-
-  end
-
 end
