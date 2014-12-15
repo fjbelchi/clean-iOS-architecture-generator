@@ -15,7 +15,9 @@ module IOSGen
         @type = hash[:type]
         @file_spec = hash[:file_spec]
         @destination = hash[:destination]
-        @formatter = Objc::Formatter.new
+        interactor_formatter = Objc::InteractorFormatter.new
+        view_model_formatter = Objc::ViewModelFormatter.new(interactor_formatter)
+        @formatter = Objc::Formatter.new(view_model_formatter, interactor_formatter)
         parse
       end
 
@@ -35,7 +37,7 @@ module IOSGen
       end
 
       def generate_view_model
-        @formatter.generate_view_model do |file_name, template|
+        @formatter.generate do |file_name, template|
           generate_template(file_name, template)
           puts "Created #{file_name}"
         end
