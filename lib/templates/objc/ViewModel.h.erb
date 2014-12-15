@@ -1,9 +1,9 @@
-#import "<%=@formatter.view_model_protocol_file_name%>"
+#import "<%=@formatter.view_model_formatter.view_model_protocol_file_name%>"
 
-@interface <%=@view_model.name %> <<%=@formatter.view_model_protocol_name%>>
+@interface <%=@view_model.name %> <<%=@formatter.view_model_formatter.view_model_protocol_name%>>
 
 // -- Properties
-<%=@formatter.view_model_properties_header %>
-@property (nonatomic, weak) id<<%=@formatter.view_model_protocol_delegate %>> delegate
+<%=@formatter.view_model_formatter.view_model_properties_header %>
+@property (nonatomic, weak) id<<%=@formatter.view_model_formatter.view_model_protocol_delegate %>> delegate
 
 @end

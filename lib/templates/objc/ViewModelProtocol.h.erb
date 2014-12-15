@@ -1,15 +1,15 @@
 
-@protocol <%=@formatter.view_model_protocol_name %>;
-@protocol <%=@formatter.view_model_protocol_delegate %> <NSObject>
+@protocol <%=@formatter.view_model_formatter.view_model_protocol_name %>;
+@protocol <%=@formatter.view_model_formatter.view_model_protocol_delegate %> <NSObject>
 @end
 
-@protocol <%=@formatter.view_model_protocol_name %> <NSObject>
+@protocol <%=@formatter.view_model_formatter.view_model_protocol_name %> <NSObject>
 
 // -- Properties
-<%=@formatter.view_model_properties_header %>
-@property (nonatomic, weak) id<<%=@formatter.view_model_protocol_delegate %>> delegate
+<%=@formatter.view_model_formatter.view_model_properties_header %>
+@property (nonatomic, weak) id<<%=@formatter.view_model_formatter.view_model_protocol_delegate %>> delegate
 
 // -- Actions
-<%=@formatter.view_model_actions_header %>
+<%=@formatter.view_model_formatter.view_model_actions_header %>
 
 @end
