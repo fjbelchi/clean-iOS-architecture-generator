@@ -1,0 +1,11 @@
+#import "<%=@formatter.view_model_formatter.interactor_formatter.protocol_file_name%>"
+
+@interface <%=@formatter.view_model_formatter.interactor_formatter.interactor.name%> <<%=@formatter.view_model_formatter.interactor_formatter.protocol_name%>>
+<%if @formatter.view_model_formatter.interactor_formatter.properties_header.nil?%>
+// -- Properties
+<%=@formatter.view_model_formatter.interactor_formatter.properties_header %>
+<%end%>
+// -- Actions
+<%=@formatter.view_model_formatter.interactor_formatter.actions_header %>
+
+@end

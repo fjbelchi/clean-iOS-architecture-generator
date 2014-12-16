@@ -1,0 +1,8 @@
+#import <UIKit/UIKit.h>
+#import "<%=@formatter.view_controller_formatter.view_model_formatter.protocol_file_name%>"
+
+@interface <%= @view_controller.name %> : UIViewController
+
+- (instancetype)initWithViewModel:(id<<%=@formatter.view_controller_formatter.view_model_formatter.protocol_name%>>)viewModel;
+
+@end

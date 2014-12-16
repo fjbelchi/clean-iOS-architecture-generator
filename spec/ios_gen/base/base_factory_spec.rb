@@ -212,4 +212,27 @@ describe IOSGen::Base::BaseFactory do
       expect(interactor).to be_a Interactor
     end
   end
+
+  describe '#ViewController' do
+    json = '{
+      "description": "ViewController to show the list of notifications",
+      "name": "FJBNotificationViewController",
+      "view_model": "FJBNotificationsViewModel"
+    }'
+
+    factory = described_class.new
+    hash = JSON.parse(json)
+    view_controller = factory.parse_view_controller(hash)
+
+    it 'expect to parse JSON' do
+      expect(view_controller).to be_a ViewController
+    end
+
+    it 'has name' do
+      expect(view_controller.name).to eq('FJBNotificationViewController')
+    end
+    it 'has description' do
+      expect(view_controller.description).to eq('ViewController to show the list of notifications')
+    end
+  end
 end

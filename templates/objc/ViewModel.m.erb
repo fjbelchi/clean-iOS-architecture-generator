@@ -1,0 +1,13 @@
+#import "<%=@formatter.view_model_formatter.header_file_name %>"
+
+@interface <%= @view_model.name %> ()
+
+@end
+
+@implementation <%=@view_model.name %>
+
+#pragma mark - Actions
+
+<%=@formatter.view_model_formatter.actions_impl %>
+
+@end

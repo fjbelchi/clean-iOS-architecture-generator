@@ -33,12 +33,19 @@ describe IOSGen::Generator::Objc::Formatter do
                              actions: actions,
                              interactors: interactors)
 
+  name_view_controller = 'FJBNotificationViewController'
+  description_view_controller = 'ViewController to display notifications'
+
+  view_controller = ViewController.new(name: name_view_controller,
+                                       description: description_view_controller)
+
   formatter = described_class.new
   formatter.view_model = view_model
+  formatter.view_controller = view_controller
 
   describe '#generate' do
-    it 'has to yield 6 times' do
-      expect { |b| formatter.generate(&b) }.to yield_control.exactly(6).times
+    it 'has to yield 8 times' do
+      expect { |b| formatter.generate(&b) }.to yield_control.exactly(8).times
     end
   end
 

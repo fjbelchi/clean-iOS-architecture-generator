@@ -1,0 +1,31 @@
+#import "<%=@formatter.view_controller_formatter.header_file_name%>"
+
+@interface <%=@view_controller.name %> () <<%=@formatter.view_controller_formatter.view_model_formatter.protocol_delegate%>>
+
+@property (nonatomic, strong) id<<%=@formatter.view_controller_formatter.view_model_formatter.protocol_name%>> viewModel;
+
+@end
+
+@implementation <%=@view_controller.name %>
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+- (instancetype)initWithViewModel:(id<<%=@formatter.view_controller_formatter.view_model_formatter.protocol_name%>>)viewModel
+{
+    self = [self init];
+    if (self) {
+        _viewModel = viewModel;
+        _viewModel.delegate = self;
+    }
+    return self;
+}
+
+#pragma mark - <%=@formatter.view_controller_formatter.view_model_formatter.protocol_delegate%>
+
+@end
