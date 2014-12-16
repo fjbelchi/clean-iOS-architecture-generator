@@ -7,7 +7,7 @@ Clean iOS architecture generator
 Ruby script to generate a clean iOS architecture based on a spec file written in json format. 
 Having the following components, the script will generate files according and it will add some logic in order to save development time.
 
-In the roadmap there are features like estimations and creation of tickets in Github Issues and others management tools.
+In the [roadmap](https://github.com/fjbelchi/clean-iOS-architecture-generator/issues) there are features like estimations and creation of tickets in Github Issues and others management tools.
 
 Working in progress project
 
