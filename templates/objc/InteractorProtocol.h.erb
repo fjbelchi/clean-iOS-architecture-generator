@@ -1,9 +1,9 @@
-@protocol <%=@formatter.view_model_formatter.interactor_formatter.interactor_protocol_name%> <NSObject>
-
+@protocol <%=@formatter.view_model_formatter.interactor_formatter.protocol_name%> <NSObject>
+<%if @formatter.view_model_formatter.interactor_formatter.properties_header.nil?%>
 // -- Properties
-<%=@formatter.view_model_formatter.interactor_formatter.interactor_properties_header %>
-
+<%=@formatter.view_model_formatter.interactor_formatter.properties_header %>
+<%end%>
 // -- Actions
-<%=@formatter.view_model_formatter.interactor_formatter.interactor_actions_header %>
+<%=@formatter.view_model_formatter.interactor_formatter.actions_header %>
 
 @end

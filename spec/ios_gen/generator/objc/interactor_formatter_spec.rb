@@ -17,34 +17,34 @@ describe IOSGen::Generator::Objc::InteractorFormatter do
   formatter.interactor = interactor
 
   describe 'Properties' do
-    it 'has interactor_header_file_name' do
-      expect(formatter.interactor_header_file_name).to eq('FJBNotificationsApiInteractor.h')
+    it 'has header_file_name' do
+      expect(formatter.header_file_name).to eq('FJBNotificationsApiInteractor.h')
     end
 
-    it 'has interactor_impl_file_name' do
-      expect(formatter.interactor_impl_file_name).to eq('FJBNotificationsApiInteractor.m')
+    it 'has impl_file_name' do
+      expect(formatter.impl_file_name).to eq('FJBNotificationsApiInteractor.m')
     end
 
-    it 'has interactor_protocol_file_name' do
-      expect(formatter.interactor_protocol_file_name).to eq('FJBNotificationsApiInteractorProtocol.h')
+    it 'has protocol_file_name' do
+      expect(formatter.protocol_file_name).to eq('FJBNotificationsApiInteractorProtocol.h')
     end
 
-    it 'has interactor_protocol_name' do
-      expect(formatter.interactor_protocol_name).to eq('FJBNotificationsApiInteractorProtocol')
+    it 'has protocol_name' do
+      expect(formatter.protocol_name).to eq('FJBNotificationsApiInteractorProtocol')
     end
 
-    it 'has interactor_properties_header' do
-      expect(formatter.interactor_properties_header).to eq('')
+    it 'has properties_header' do
+      expect(formatter.properties_header).to eq('')
     end
 
-    it 'has interactor_actions_header' do
+    it 'has actions_header' do
       expected_string = "// Perform API request to mark a notification as read\n- (void)markNotificationAsRead:(NSString *)notificationId onCompletionBlock:(^())completionBlock;"
-      expect(formatter.interactor_actions_header).to eq(expected_string)
+      expect(formatter.actions_header).to eq(expected_string)
     end
 
-    it 'has interactor_actions_impl' do
+    it 'has actions_impl' do
       expected_string = "- (void)markNotificationAsRead:(NSString *)notificationId onCompletionBlock:(^())completionBlock\n{\n}"
-      expect(formatter.interactor_actions_impl).to eq(expected_string)
+      expect(formatter.actions_impl).to eq(expected_string)
     end
   end
 
@@ -62,17 +62,17 @@ describe IOSGen::Generator::Objc::InteractorFormatter do
     end
 
     it 'has to return protocol file name and template' do
-      expect(file_names[0]).to eq(formatter.interactor_protocol_file_name)
+      expect(file_names[0]).to eq(formatter.protocol_file_name)
       expect(templates[0]).to eq('templates/objc/InteractorProtocol.h.erb')
     end
 
     it 'has to return header file name and template' do
-      expect(file_names[1]).to eq(formatter.interactor_header_file_name)
+      expect(file_names[1]).to eq(formatter.header_file_name)
       expect(templates[1]).to eq('templates/objc/Interactor.h.erb')
     end
 
     it 'has to return implementation file name and template' do
-      expect(file_names[2]).to eq(formatter.interactor_impl_file_name)
+      expect(file_names[2]).to eq(formatter.impl_file_name)
       expect(templates[2]).to eq('templates/objc/Interactor.m.erb')
     end
   end

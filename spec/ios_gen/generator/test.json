@@ -46,7 +46,7 @@
                 "name": "notificationId"
               },
               {
-                "type": "^()",
+                "type": "void(^)()",
                 "name": "completionBlock"
               }
             ]

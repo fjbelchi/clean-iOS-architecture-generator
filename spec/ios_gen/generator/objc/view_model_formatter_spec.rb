@@ -39,41 +39,41 @@ describe IOSGen::Generator::Objc::ViewModelFormatter do
 
   describe '#Properties ViewModel' do
 
-    it 'has view_model_properties_header' do
+    it 'has properties_header' do
       expected_string = '@property (nonatomic, strong) NSIndexPath *selectedIndexPath;'
-      expect(formatter.view_model_properties_header).to eq(expected_string)
+      expect(formatter.properties_header).to eq(expected_string)
     end
 
-    it 'has view_model_actions_header' do
+    it 'has actions_header' do
       expected_string1 = "// Dismiss the ViewController when the button is tapped\n- (void)didTapOnCloseButton;\n"
       expected_string2 = "// Mark notification as read when the notification is selected\n- (void)didTapAtIndexPath:(NSIndexPath *)indexPath;"
       expected_string = expected_string1 + expected_string2
-      expect(formatter.view_model_actions_header).to eq(expected_string)
+      expect(formatter.actions_header).to eq(expected_string)
     end
 
-    it 'has view_model_actions_impl' do
+    it 'has actions_impl' do
       expected_string = "- (void)didTapOnCloseButton\n{\n}\n- (void)didTapAtIndexPath:(NSIndexPath *)indexPath\n{\n}"
-      expect(formatter.view_model_actions_impl).to eq(expected_string)
+      expect(formatter.actions_impl).to eq(expected_string)
     end
 
-    it 'has view_model_header_file_name' do
-      expect(formatter.view_model_header_file_name).to eq('FJBNotificationsViewModel.h')
+    it 'has header_file_name' do
+      expect(formatter.header_file_name).to eq('FJBNotificationsViewModel.h')
     end
 
-    it 'has view_model_impl_file_name' do
-      expect(formatter.view_model_impl_file_name).to eq('FJBNotificationsViewModel.m')
+    it 'has impl_file_name' do
+      expect(formatter.impl_file_name).to eq('FJBNotificationsViewModel.m')
     end
 
-    it 'has view_model_protocol_name' do
-      expect(formatter.view_model_protocol_name).to eq('FJBNotificationsViewModelProtocol')
+    it 'has protocol_name' do
+      expect(formatter.protocol_name).to eq('FJBNotificationsViewModelProtocol')
     end
 
-    it 'has view_model_protocol_file_name' do
-      expect(formatter.view_model_protocol_file_name).to eq('FJBNotificationsViewModelProtocol.h')
+    it 'has protocol_file_name' do
+      expect(formatter.protocol_file_name).to eq('FJBNotificationsViewModelProtocol.h')
     end
 
-    it 'has view_model_protocol_delegate' do
-      expect(formatter.view_model_protocol_delegate).to eq('FJBNotificationsViewModelProtocolDelegate')
+    it 'has protocol_delegate' do
+      expect(formatter.protocol_delegate).to eq('FJBNotificationsViewModelProtocolDelegate')
     end
   end
 
@@ -92,32 +92,32 @@ describe IOSGen::Generator::Objc::ViewModelFormatter do
     end
 
     it 'has to return protocol file name and template' do
-      expect(file_names[0]).to eq(formatter.view_model_protocol_file_name)
+      expect(file_names[0]).to eq(formatter.protocol_file_name)
       expect(templates[0]).to eq('templates/objc/ViewModelProtocol.h.erb')
     end
 
     it 'has to return header file name and template' do
-      expect(file_names[1]).to eq(formatter.view_model_header_file_name)
+      expect(file_names[1]).to eq(formatter.header_file_name)
       expect(templates[1]).to eq('templates/objc/ViewModel.h.erb')
     end
 
     it 'has to return implementation file name and template' do
-      expect(file_names[2]).to eq(formatter.view_model_impl_file_name)
+      expect(file_names[2]).to eq(formatter.impl_file_name)
       expect(templates[2]).to eq('templates/objc/ViewModel.m.erb')
     end
 
     it 'has to return interactor protocol file name and template' do
-      expect(file_names[3]).to eq(formatter.interactor_formatter.interactor_protocol_file_name)
+      expect(file_names[3]).to eq(formatter.interactor_formatter.protocol_file_name)
       expect(templates[3]).to eq('templates/objc/InteractorProtocol.h.erb')
     end
 
     it 'has to return interactor header file name and template' do
-      expect(file_names[4]).to eq(formatter.interactor_formatter.interactor_header_file_name)
+      expect(file_names[4]).to eq(formatter.interactor_formatter.header_file_name)
       expect(templates[4]).to eq('templates/objc/Interactor.h.erb')
     end
 
     it 'has to return interactor implementation file name and template' do
-      expect(file_names[5]).to eq(formatter.interactor_formatter.interactor_impl_file_name)
+      expect(file_names[5]).to eq(formatter.interactor_formatter.impl_file_name)
       expect(templates[5]).to eq('templates/objc/Interactor.m.erb')
     end
 

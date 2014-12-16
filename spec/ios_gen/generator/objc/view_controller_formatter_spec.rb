@@ -10,11 +10,11 @@ describe IOSGen::Generator::Objc::ViewControllerFormatter do
   formatter.view_controller = view_controller
 
   describe 'Properties' do
-    it 'has view_controller_header_file_name' do
-      expect(formatter.view_controller_header_file_name).to eq('FJBNotificationViewController.h')
+    it 'has header_file_name' do
+      expect(formatter.header_file_name).to eq('FJBNotificationViewController.h')
     end
-    it 'has view_controller_impl_file_name' do
-      expect(formatter.view_controller_impl_file_name).to eq('FJBNotificationViewController.m')
+    it 'has impl_file_name' do
+      expect(formatter.impl_file_name).to eq('FJBNotificationViewController.m')
     end
   end
 
@@ -33,12 +33,12 @@ describe IOSGen::Generator::Objc::ViewControllerFormatter do
     end
 
     it 'has to return header file name and template' do
-      expect(file_names[0]).to eq(formatter.view_controller_header_file_name)
+      expect(file_names[0]).to eq(formatter.header_file_name)
       expect(templates[0]).to eq('templates/objc/UIViewController.h.erb')
     end
 
     it 'has to return implementation file name and template' do
-      expect(file_names[1]).to eq(formatter.view_controller_impl_file_name)
+      expect(file_names[1]).to eq(formatter.impl_file_name)
       expect(templates[1]).to eq('templates/objc/UIViewController.m.erb')
     end
   end

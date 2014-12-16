@@ -6,14 +6,14 @@ module IOSGen
         # ViewModel and Interactors
         attr_accessor :view_model
         # File Names ViewModel
-        attr_reader :view_model_header_file_name, :view_model_impl_file_name
-        attr_reader :view_model_protocol_file_name
+        attr_reader :header_file_name, :impl_file_name
+        attr_reader :protocol_file_name
         # ViewModel Protocol
-        attr_reader :view_model_protocol_name, :view_model_protocol_delegate
+        attr_reader :protocol_name, :protocol_delegate
         # ViewModel Porperties
-        attr_reader :view_model_properties_header
+        attr_reader :properties_header
         # ViewModel Actions
-        attr_reader :view_model_actions_header, :view_model_actions_impl
+        attr_reader :actions_header, :actions_impl
         # Interactor Formatter
         attr_reader :interactor_formatter
 
@@ -21,27 +21,27 @@ module IOSGen
           @interactor_formatter = interactor_formatter
         end
 
-        def view_model_header_file_name
+        def header_file_name
           "#{@view_model.name}.h"
         end
 
-        def view_model_impl_file_name
+        def impl_file_name
           "#{@view_model.name}.m"
         end
 
-        def view_model_protocol_file_name
+        def protocol_file_name
           "#{@view_model.name}Protocol.h"
         end
 
-        def view_model_protocol_name
+        def protocol_name
           "#{@view_model.name}Protocol"
         end
 
-        def view_model_protocol_delegate
+        def protocol_delegate
           "#{@view_model.name}ProtocolDelegate"
         end
 
-        def view_model_properties_header
+        def properties_header
           properties = ''
           @view_model.properties.each do |property|
             properties += "@property (nonatomic, strong) #{property.type}#{property.name};\n"
@@ -49,7 +49,7 @@ module IOSGen
           properties.chop
         end
 
-        def view_model_actions_header
+        def actions_header
           actions = ''
           action_formatter = ActionFormatter.new
           @view_model.actions.each do |action|
@@ -58,7 +58,7 @@ module IOSGen
           actions.chop
         end
 
-        def view_model_actions_impl
+        def actions_impl
           actions = ''
           action_formatter = ActionFormatter.new
           @view_model.actions.each do |action|
@@ -68,9 +68,9 @@ module IOSGen
         end
 
         def generate(&block)
-          block.call(view_model_protocol_file_name, 'templates/objc/ViewModelProtocol.h.erb')
-          block.call(view_model_header_file_name, 'templates/objc/ViewModel.h.erb')
-          block.call(view_model_impl_file_name, 'templates/objc/ViewModel.m.erb')
+          block.call(protocol_file_name, 'templates/objc/ViewModelProtocol.h.erb')
+          block.call(header_file_name, 'templates/objc/ViewModel.h.erb')
+          block.call(impl_file_name, 'templates/objc/ViewModel.m.erb')
           generate_interactor(&block)
         end
 
