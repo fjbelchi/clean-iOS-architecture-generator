@@ -77,7 +77,7 @@ describe IOSGen::Generator::Objc::ViewModelFormatter do
     end
   end
 
-  describe '#generate_view_model' do
+  describe '#generate' do
 
     it 'has to yield 6 times' do
       expect { |b| formatter.generate(&b) }.to yield_control.exactly(6).times

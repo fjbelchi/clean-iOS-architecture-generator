@@ -10,15 +10,17 @@ module IOSGen
 
       attr_reader :type, :file_spec, :destination
       attr_reader :view_model, :view_controller
-      attr_reader :formatter
+      attr_reader :factory, :formatter
 
       def initialize(hash = {})
         @type = hash[:type]
         @file_spec = hash[:file_spec]
         @destination = hash[:destination]
+        @factory = IOSGen::Base::BaseFactory.new
+        view_controller_formatter = Objc::ViewControllerFormatter.new
         interactor_formatter = Objc::InteractorFormatter.new
         view_model_formatter = Objc::ViewModelFormatter.new(interactor_formatter)
-        @formatter = Objc::Formatter.new(view_model_formatter, interactor_formatter)
+        @formatter = Objc::Formatter.new(view_controller_formatter, view_model_formatter, interactor_formatter)
         parse
       end
 
@@ -31,11 +33,11 @@ module IOSGen
       def parse
         file = File.read(@file_spec)
         hash = JSON.parse(file)
-        factory = IOSGen::Base::BaseFactory.new
-        @view_model = factory.parse_view_model(hash[VIEWMODEL_KEY])
-        @view_controller = factory.parse_view_controller(hash[VIEWCONTROLLER_KEY])
-        @formatter.view_model = @view_model
-        @formatter.view_controller = @view_controller
+        @view_model = @factory.parse_view_model(hash[VIEWMODEL_KEY])
+        @view_controller = @factory.parse_view_controller(hash[VIEWCONTROLLER_KEY])
+        @view_controller.view_model = @view_model unless @view_controller.nil?
+        @formatter.view_model = @view_model unless @view_model.nil?
+        @formatter.view_controller = @view_controller unless @view_controller.nil?
       end
 
       def generate_view_model

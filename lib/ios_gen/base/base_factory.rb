@@ -63,6 +63,11 @@ module IOSGen
         end
         interactors_array
       end
+
+      def parse_view_controller(hash)
+        ViewController.new(name: hash[NAME_KEY],
+                           description: hash[DESCRIPTION_KEY])
+      end
     end
   end
 end

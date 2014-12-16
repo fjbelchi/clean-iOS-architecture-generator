@@ -1,6 +1,7 @@
 {
   "view_controller": {
-    "name": "FJBNotificationViewController"
+    "description": "ViewController to show the list of notifications",
+    "name": "FJBNotificationsViewController"
   },
   "view_model": {
     "description" : "State of NotificationViewController and perform bussiness logic",

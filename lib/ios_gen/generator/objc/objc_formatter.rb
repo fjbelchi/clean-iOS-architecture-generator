@@ -4,18 +4,23 @@ module IOSGen
       # Objc Formatter
       class Formatter
         # ViewModel and Interactors
-        attr_accessor :view_model, :interactors
+        attr_accessor :view_controller, :view_model, :interactors
         # Formatters
-        attr_reader :view_model_formatter, :interactor_formatter
+        attr_reader :view_controller_formatter, :view_model_formatter
+        attr_reader :interactor_formatter
 
-        def initialize(view_model_formatter = ViewModelFormatter.new,
+        def initialize(view_controller_formatter = ViewControllerFormatter.new,
+                       view_model_formatter = ViewModelFormatter.new,
                        interactor_formatter = InteractorFormatter.new)
           @view_model_formatter = view_model_formatter
           @interfactor_formatter = interactor_formatter
+          @view_controller_formatter = view_controller_formatter
         end
 
         def generate(&block)
-          @view_model_formatter.view_model = view_model
+          @view_controller_formatter.view_controller = @view_controller
+          @view_controller_formatter.generate(&block)
+          @view_model_formatter.view_model = @view_model
           @view_model_formatter.generate(&block)
         end
       end

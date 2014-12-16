@@ -1,20 +1,8 @@
-#import <%="\"#{@viewcontroller_name}.h\""%>
+#import "<%=@formatter.view_controller_formatter.view_controller_header_file_name%>"
 
-@interface <%=@viewcontroller_name %> () <%="<UITableViewDelegate>" if @table_view %>
-<% if @table_view %>
-@property (nonatomic, strong) UITableView *tableView;
-<% end %>
+@interface <%=@view_controller.name %> ()
 @end
 
-@implementation <%=@viewcontroller_name %>
-<% if @table_view %>
-- (UITableView *)tableView
-{
-    if (_tableView) {
-        return _tableView;
-    }
+@implementation <%=@view_controller.name %>
 
-    return _tableView;
-}
-<% end %>
 @end
