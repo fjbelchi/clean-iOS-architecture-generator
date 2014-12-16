@@ -1,13 +1,6 @@
 {
   "view_controller": {
-    "name": "FJBNotificationViewController",
-    "tableView": true,
-    "subviews": [
-      {
-        "type": "FJBHeaderView *",
-        "name": "headerView"
-      }
-    ]
+    "name": "FJBNotificationViewController"
   },
   "view_model": {
     "description" : "State of NotificationViewController and perform bussiness logic",
