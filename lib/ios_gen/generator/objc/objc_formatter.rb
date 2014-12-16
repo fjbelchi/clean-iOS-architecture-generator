@@ -12,15 +12,16 @@ module IOSGen
         def initialize(view_controller_formatter = ViewControllerFormatter.new,
                        view_model_formatter = ViewModelFormatter.new,
                        interactor_formatter = InteractorFormatter.new)
+          @view_controller_formatter = view_controller_formatter
           @view_model_formatter = view_model_formatter
           @interfactor_formatter = interactor_formatter
-          @view_controller_formatter = view_controller_formatter
         end
 
         def generate(&block)
           @view_controller_formatter.view_controller = @view_controller
-          @view_controller_formatter.generate(&block)
+          @view_controller_formatter.view_model = @view_model
           @view_model_formatter.view_model = @view_model
+          @view_controller_formatter.generate(&block)
           @view_model_formatter.generate(&block)
         end
       end

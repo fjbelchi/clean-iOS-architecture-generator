@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+include IOSGen::Generator::Objc
+
 describe IOSGen::Generator::Objc::ViewControllerFormatter do
 
   name = 'FJBNotificationViewController'
@@ -13,8 +15,13 @@ describe IOSGen::Generator::Objc::ViewControllerFormatter do
     it 'has header_file_name' do
       expect(formatter.header_file_name).to eq('FJBNotificationViewController.h')
     end
+
     it 'has impl_file_name' do
       expect(formatter.impl_file_name).to eq('FJBNotificationViewController.m')
+    end
+
+    it 'has a view_model_formatter' do
+      expect(formatter.view_model_formatter).to be_a ViewModelFormatter
     end
   end
 

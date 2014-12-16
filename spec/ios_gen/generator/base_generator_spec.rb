@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe IOSGen::Generator::BaseGenerator do
 
-  file_path = File.dirname(__FILE__) + '/test.json'
+  file_path = File.dirname(__FILE__) + '/spec.json'
   generator = described_class.new(type: :objc,
                                   file_spec: file_path)
 
@@ -34,7 +34,7 @@ describe IOSGen::Generator::BaseGenerator do
       end
 
       context 'New files' do
-        file_path = File.dirname(__FILE__) + '/test.json'
+        file_path = File.dirname(__FILE__) + '/spec.json'
         generator = described_class.new(type: :objc,
                                         file_spec: file_path)
         puts file_path

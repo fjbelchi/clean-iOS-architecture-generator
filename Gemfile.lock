@@ -7,6 +7,7 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
+    colorize (0.7.4)
     coveralls (0.7.2)
       multi_json (~> 1.3)
       rest-client (= 1.6.7)
@@ -90,6 +91,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorize (~> 0.7.4)
   coveralls
   guard
   guard-rspec

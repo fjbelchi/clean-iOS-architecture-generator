@@ -1,4 +1,5 @@
 require 'erb'
+require 'colorize'
 
 module IOSGen
   module Generator
@@ -17,9 +18,9 @@ module IOSGen
         @file_spec = hash[:file_spec]
         @destination = hash[:destination]
         @factory = IOSGen::Base::BaseFactory.new
-        view_controller_formatter = Objc::ViewControllerFormatter.new
         interactor_formatter = Objc::InteractorFormatter.new
         view_model_formatter = Objc::ViewModelFormatter.new(interactor_formatter)
+        view_controller_formatter = Objc::ViewControllerFormatter.new(view_model_formatter)
         @formatter = Objc::Formatter.new(view_controller_formatter, view_model_formatter, interactor_formatter)
         parse
       end
@@ -43,7 +44,7 @@ module IOSGen
       def generate_view_model
         @formatter.generate do |file_name, template|
           generate_template(file_name, template, @destination)
-          puts "Created #{file_name}"
+          puts "[+] Created #{file_name}".green
         end
       end
 
