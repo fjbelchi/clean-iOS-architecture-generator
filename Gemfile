@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'simplecov', require: false
 gem 'coveralls', require: false
 gem 'colorize', '~> 0.7.4'
+gem 'thor', '~> 0.19.1'
 
 group :test do
   gem 'rake'
