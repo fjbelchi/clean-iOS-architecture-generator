@@ -2,4 +2,4 @@ require 'rubygems'
 require 'thor'
 require 'JSON'
 
-Dir['ios_gen/**/*.rb'].each { |file| puts file }
+Dir[File.dirname(__FILE__) + '/ios_gen/**/*.rb'].each { |file| require file }
