@@ -1,5 +1,6 @@
 require 'simplecov'
 require 'coveralls'
+require './lib/iosgen'
 
 SimpleCov.start
 Coveralls.wear!
