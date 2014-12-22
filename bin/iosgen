@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require '../lib/iosgen'
+require 'iosgen'
 
 IOSGenThor.start(ARGV)

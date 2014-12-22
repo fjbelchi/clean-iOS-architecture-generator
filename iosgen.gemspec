@@ -1,11 +1,9 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ios_gen/version'
 
 Gem::Specification.new do |s|
   s.name        = 'iosgen'
-  s.version     = IOSGen::VERSION
+  s.version     = '1.0.0'
   s.summary     = 'Clean iOS architecture generator'
   s.description = 'Code generator to build a clean iOS architecture'
   s.authors     = ['Francisco J. Belchi']
