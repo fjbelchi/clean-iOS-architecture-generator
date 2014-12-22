@@ -1,5 +1,4 @@
 # coding: utf-8
-require 'ios_gen/version'
 
 Gem::Specification.new do |s|
   s.name        = 'iosgen'
