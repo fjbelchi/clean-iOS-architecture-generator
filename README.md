@@ -3,25 +3,51 @@ Clean iOS architecture generator
 [![Build Status](https://travis-ci.org/fjbelchi/clean-iOS-architecture-generator.svg)](https://travis-ci.org/fjbelchi/clean-iOS-architecture-generator)
 [![Coverage Status](https://coveralls.io/repos/fjbelchi/clean-iOS-architecture-generator/badge.png)](https://coveralls.io/r/fjbelchi/clean-iOS-architecture-generator)
 [![Code Climate](https://codeclimate.com/github/fjbelchi/clean-iOS-architecture-generator/badges/gpa.svg)](https://codeclimate.com/github/fjbelchi/clean-iOS-architecture-generator)
+[![Gem Version](https://badge.fury.io/rb/iosgen.svg)](http://badge.fury.io/rb/iosgen)
 
-Ruby script to generate a clean iOS architecture based on a spec file written in json format. 
-Having the following components, the script will generate files according and it will add some logic in order to save development time.
+Ruby gem to generate a clean iOS architecture based on a spec file written in json format. 
+Having the following components, the gem will generate files according and it will add some logic in order to save development time.
 
 In the [roadmap](https://github.com/fjbelchi/clean-iOS-architecture-generator/issues) there are features like estimations and creation of tickets in Github Issues and others management tools.
 
-Working in progress project
+## Install
 
+```shell
+gem install iosgen
+```
+
+#### Execute
+
+```shell
+$ iosgen generate spec.json
+spec.json
+[+] Created FJBNotificationsViewController.h
+[+] Created FJBNotificationsViewController.m
+[+] Created FJBNotificationsViewModelProtocol.h
+[+] Created FJBNotificationsViewModel.h
+[+] Created FJBNotificationsViewModel.m
+[+] Created FJBNotificationsApiInteractorProtocol.h
+[+] Created FJBNotificationsApiInteractor.h
+[+] Created FJBNotificationsApiInteractor.m
+```
 ## Components
 
 #### Property
+
+The property object is composited of two strings, type and name, which repesent variables.
+* type : Any Object type
+* name : name of the object
+
 ```json
 {
-  "Type": "NSIndexPath *",
-  "Name": "selectedIndexPath"
+  "type": "NSIndexPath *",
+  "name": "selectedIndexPath"
 }
 ```
 
 #### Action
+
+
 ```json
 {
   "description": "Dismiss the ViewController when the button is tapped",
@@ -35,6 +61,10 @@ Working in progress project
 ```
 
 #### Interactor
+
+Interactor is an object which perform actions for other components. 
+In this example the ViewModel needs to comunicate to the server which notification has been mark as read.
+
 ```json
 {
   "description" : "Api Interactions required by Notification ViewModel",
@@ -61,6 +91,7 @@ Working in progress project
 ```
 
 #### ViewModel
+
 ```json
 {
   "description" : "State of NotificationViewController and perform bussiness logic",
@@ -72,6 +103,7 @@ Working in progress project
 ```
 
 #### UIViewController
+
 ```json
   "view_controller": {
     "description": "ViewController to show the list of notifications",
@@ -140,19 +172,4 @@ Working in progress project
     }
   }
 }
-```
-
-#### Output
-```shell
-$ ./iosgen.rb spec ../spec/ios_gen/generator/spec.json
-../spec/ios_gen/generator/spec.json
-[+] Created FJBNotificationsViewController.h
-[+] Created FJBNotificationsViewController.m
-[+] Created FJBNotificationsViewModelProtocol.h
-[+] Created FJBNotificationsViewModel.h
-[+] Created FJBNotificationsViewModel.m
-[+] Created FJBNotificationsApiInteractorProtocol.h
-[+] Created FJBNotificationsApiInteractor.h
-[+] Created FJBNotificationsApiInteractor.m
-
 ```
