@@ -14,6 +14,9 @@
 		FFC017831A5158CE008C4129 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC017821A5158CE008C4129 /* Images.xcassets */; };
 		FFC017861A5158CE008C4129 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC017841A5158CE008C4129 /* LaunchScreen.xib */; };
 		FFC017921A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */; };
+		FFC0179E1A515A28008C4129 /* FJBNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */; };
+		FFC017A31A515A4A008C4129 /* FJBNotificationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */; };
+		FFC017A81A515A54008C4129 /* FJBNotificationsApiInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,14 @@
 		FFC0178B1A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCleanArchitectureGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC017901A5158CE008C4129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSCleanArchitectureGeneratorTests.m; sourceTree = "<group>"; };
+		FFC0179C1A515A28008C4129 /* FJBNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewController.h; sourceTree = "<group>"; };
+		FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewController.m; sourceTree = "<group>"; };
+		FFC017A01A515A4A008C4129 /* FJBNotificationsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModel.h; sourceTree = "<group>"; };
+		FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModel.m; sourceTree = "<group>"; };
+		FFC017A21A515A4A008C4129 /* FJBNotificationsViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModelProtocol.h; sourceTree = "<group>"; };
+		FFC017A51A515A54008C4129 /* FJBNotificationsApiInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractor.h; sourceTree = "<group>"; };
+		FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsApiInteractor.m; sourceTree = "<group>"; };
+		FFC017A71A515A54008C4129 /* FJBNotificationsApiInteractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractorProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,9 @@
 		FFC017741A5158CE008C4129 /* iOSCleanArchitectureGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				FFC017A41A515A54008C4129 /* Interactors */,
+				FFC0179F1A515A4A008C4129 /* ViewModels */,
+				FFC0179B1A515A28008C4129 /* ViewControllers */,
 				FFC017791A5158CE008C4129 /* AppDelegate.h */,
 				FFC0177A1A5158CE008C4129 /* AppDelegate.m */,
 				FFC0177C1A5158CE008C4129 /* ViewController.h */,
@@ -118,6 +132,35 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		FFC0179B1A515A28008C4129 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFC0179C1A515A28008C4129 /* FJBNotificationsViewController.h */,
+				FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = SOURCE_ROOT;
+		};
+		FFC0179F1A515A4A008C4129 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017A01A515A4A008C4129 /* FJBNotificationsViewModel.h */,
+				FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */,
+				FFC017A21A515A4A008C4129 /* FJBNotificationsViewModelProtocol.h */,
+			);
+			path = ViewModels;
+			sourceTree = SOURCE_ROOT;
+		};
+		FFC017A41A515A54008C4129 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017A51A515A54008C4129 /* FJBNotificationsApiInteractor.h */,
+				FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */,
+				FFC017A71A515A54008C4129 /* FJBNotificationsApiInteractorProtocol.h */,
+			);
+			path = Interactors;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -219,8 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC0179E1A515A28008C4129 /* FJBNotificationsViewController.m in Sources */,
 				FFC0177E1A5158CE008C4129 /* ViewController.m in Sources */,
 				FFC0177B1A5158CE008C4129 /* AppDelegate.m in Sources */,
+				FFC017A81A515A54008C4129 /* FJBNotificationsApiInteractor.m in Sources */,
+				FFC017A31A515A4A008C4129 /* FJBNotificationsViewModel.m in Sources */,
 				FFC017781A5158CE008C4129 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
