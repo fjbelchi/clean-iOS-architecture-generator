@@ -19,17 +19,21 @@ gem install iosgen
 #### Execute
 
 ```shell
-$ iosgen generate spec.json
-spec.json
-[+] Created FJBNotificationsViewController.h
-[+] Created FJBNotificationsViewController.m
-[+] Created FJBNotificationsViewModelProtocol.h
-[+] Created FJBNotificationsViewModel.h
-[+] Created FJBNotificationsViewModel.m
-[+] Created FJBNotificationsApiInteractorProtocol.h
-[+] Created FJBNotificationsApiInteractor.h
-[+] Created FJBNotificationsApiInteractor.m
+$ iosgen generate spec.json -t
+spec/ios_gen/generator/spec.json
+[+] Created Source File: FJBNotificationsViewController.h
+[+] Created Source File: FJBNotificationsViewController.m
+[+] Created Source File: FJBNotificationsViewModelProtocol.h
+[+] Created Source File: FJBNotificationsViewModel.h
+[+] Created Source File: FJBNotificationsViewModel.m
+[+] Created Source File: FJBNotificationsApiInteractorProtocol.h
+[+] Created Source File: FJBNotificationsApiInteractor.h
+[+] Created Source File: FJBNotificationsApiInteractor.m
+[+] Created Test File: FJBNotificationsViewModelTests.m
+[+] Created Test File: FJBNotificationsApiInteractorTests.m
 ```
+* Add `-t` to generate XCTest files
+
 ## Components
 
 #### Property
