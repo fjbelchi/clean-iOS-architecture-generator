@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'iosgen'
-  s.version     = '1.0.0'
+  s.version     = '1.1.0'
   s.summary     = 'Clean iOS architecture generator'
   s.description = 'Code generator to build a clean iOS architecture'
   s.authors     = ['Francisco J. Belchi']
