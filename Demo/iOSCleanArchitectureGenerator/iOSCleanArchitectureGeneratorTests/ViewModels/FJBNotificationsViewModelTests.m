@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "FJBNotificationsViewModel.h"
 
 @interface FJBNotificationsViewModelTests : XCTestCase
 

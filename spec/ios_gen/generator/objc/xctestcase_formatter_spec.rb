@@ -34,6 +34,10 @@ describe IOSGen::Generator::Objc::XctestcaseFormatter do
         expect(formatter.file_name).to eq('FJBNotificationsViewModelTests.m')
       end
 
+      it 'has class_test_name' do
+        expect(formatter.class_test_name).to eq('FJBNotificationsViewModel.h')
+      end
+
       it 'has actions_impl' do
         expected_string = "// Dismiss the ViewController when the button is tapped\n\n- (void)testdidTapOnCloseButtonShouldPass\n{\n    // given\n    // when\n    // then\n    XCTFail(@\"No implemented test\");\n}\n\n// Mark notification as read when the notification is selected\n\n- (void)testdidTapAtIndexPathShouldPass\n{\n    // given\n    // when\n    // then\n    XCTFail(@\"No implemented test\");\n}\n"
         expect(formatter.actions_impl).to eq(expected_string)
@@ -73,6 +77,10 @@ describe IOSGen::Generator::Objc::XctestcaseFormatter do
 
       it 'has file_name' do
         expect(formatter.file_name).to be_nil
+      end
+
+      it 'has class_test_name' do
+        expect(formatter.class_test_name).to be_nil
       end
 
       it 'has actions_impl' do

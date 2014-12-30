@@ -5,6 +5,8 @@ module IOSGen
       class XctestcaseFormatter
         attr_accessor :object
         attr_reader :file_name, :name, :actions_impl
+        attr_reader :class_test_name
+
         def file_name
           "#{@object.name}Tests.m" if @object.respond_to?(:name)
         end
@@ -17,6 +19,10 @@ module IOSGen
           loop_actions do |formatter, action|
             formatter.generate_test(action)
           end if @object.respond_to?(:actions)
+        end
+
+        def class_test_name
+          "#{@object.name}.h" if @object.respond_to?(:name)
         end
 
         def generate(&block)
