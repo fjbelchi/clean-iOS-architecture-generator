@@ -26,6 +26,11 @@ describe IOSGen::Generator::Objc::ActionFormatter do
       expect(result).to eq(expected_string)
     end
 
+    it 'has to generate test format' do
+      expected_string = "// Dismiss the ViewController when the button is tapped\n\n- (void)testdidTapOnCloseButtonShouldPass\n{\n    // given\n    // when\n    // then\n    XCTFail(@\"No implemented test\");\n}\n"
+      result = action_generator.generate_test(action)
+      expect(result).to eq(expected_string)
+    end
   end
 
   describe 'Actions with an argument' do
@@ -50,6 +55,11 @@ describe IOSGen::Generator::Objc::ActionFormatter do
       expect(result).to eq(expected_string)
     end
 
+    it 'has to generate test format' do
+      expected_string = "// Dismiss the ViewController when the button is tapped\n\n- (void)testdidTapOnCloseButtonShouldPass\n{\n    // given\n    // when\n    // then\n    XCTFail(@\"No implemented test\");\n}\n"
+      result = action_generator.generate_test(action)
+      expect(result).to eq(expected_string)
+    end
   end
 
   describe 'Actions with multiples arguments' do
@@ -83,6 +93,11 @@ describe IOSGen::Generator::Objc::ActionFormatter do
       result = action_generator.generate_implementation(action)
       expect(result).to eq(expected_string)
     end
-  end
 
+    it 'has to generate test format' do
+      expected_string = "// Dismiss the ViewController when the button is tapped\n\n- (void)testdidTapOnCloseButtonsuccessShouldPass\n{\n    // given\n    // when\n    // then\n    XCTFail(@\"No implemented test\");\n}\n"
+      result = action_generator.generate_test(action)
+      expect(result).to eq(expected_string)
+    end
+  end
 end

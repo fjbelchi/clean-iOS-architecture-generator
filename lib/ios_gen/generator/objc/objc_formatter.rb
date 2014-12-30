@@ -24,6 +24,10 @@ module IOSGen
           @view_controller_formatter.generate(&block)
           @view_model_formatter.generate(&block)
         end
+
+        def generate_test(&block)
+          @view_model_formatter.generate_test(&block)
+        end
       end
     end
   end

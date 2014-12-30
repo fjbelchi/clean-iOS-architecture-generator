@@ -48,7 +48,7 @@ describe IOSGen::Generator::Objc::InteractorFormatter do
     end
   end
 
-  describe 'Generate' do
+  describe '#generate' do
     it 'has to yield 3 times' do
       expect { |b| formatter.generate(&b) }.to yield_control.exactly(3).times
     end

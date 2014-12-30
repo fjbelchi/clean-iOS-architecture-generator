@@ -17,6 +17,8 @@
 		FFC017B41A518596008C4129 /* FJBNotificationsApiInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017AB1A518596008C4129 /* FJBNotificationsApiInteractor.m */; };
 		FFC017B51A518596008C4129 /* FJBNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017AF1A518596008C4129 /* FJBNotificationsViewController.m */; };
 		FFC017B61A518596008C4129 /* FJBNotificationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */; };
+		FFC017B81A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */; };
+		FFC017BC1A52B7DD008C4129 /* FJBNotificationsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FFC017B11A518596008C4129 /* FJBNotificationsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModel.h; sourceTree = "<group>"; };
 		FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModel.m; sourceTree = "<group>"; };
 		FFC017B31A518596008C4129 /* FJBNotificationsViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModelProtocol.h; sourceTree = "<group>"; };
+		FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FJBNotificationsApiInteractorTests.m; path = Interactors/FJBNotificationsApiInteractorTests.m; sourceTree = "<group>"; };
+		FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		FFC0178E1A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFC017B91A5185F8008C4129 /* Interactors */,
+				FFC017BA1A52B7DC008C4129 /* ViewModels */,
 				FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */,
 				FFC0178F1A5158CE008C4129 /* Supporting Files */,
 			);
@@ -158,6 +164,22 @@
 				FFC017B11A518596008C4129 /* FJBNotificationsViewModel.h */,
 				FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */,
 				FFC017B31A518596008C4129 /* FJBNotificationsViewModelProtocol.h */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FFC017B91A5185F8008C4129 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */,
+			);
+			name = Interactors;
+			sourceTree = "<group>";
+		};
+		FFC017BA1A52B7DC008C4129 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC017921A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m in Sources */,
+				FFC017BC1A52B7DD008C4129 /* FJBNotificationsViewModelTests.m in Sources */,
+				FFC017B81A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

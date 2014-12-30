@@ -23,9 +23,9 @@ describe IOSGen::Generator::BaseGenerator do
 
   end
 
-  describe '#Methods' do
+  describe 'Methods' do
 
-    describe '#Objc' do
+    describe 'Objc' do
       it 'has generate method' do
         expect(generator).to respond_to(:generate)
       end
@@ -37,7 +37,7 @@ describe IOSGen::Generator::BaseGenerator do
         file_path = File.dirname(__FILE__) + '/spec.json'
         generator = described_class.new(type: :objc,
                                         file_spec: file_path)
-        puts file_path
+
         before(:all) do
           generator.generate
         end
@@ -76,6 +76,41 @@ describe IOSGen::Generator::BaseGenerator do
           expect(File).to exist(file_path_header)
           expect(File).to exist(file_path_impl)
           expect(File).to exist(file_path_protocol)
+        end
+      end
+
+
+      describe '#generate_test' do
+        it 'has a generate_test method' do
+          expect(generator).to respond_to(:generate_test)
+        end
+
+        context 'No spec file' do
+        end
+
+        context 'New Test files' do
+          file_path = File.dirname(__FILE__) + '/spec.json'
+          generator = described_class.new(type: :objc,
+                                          file_spec: file_path)
+
+          before(:all) do
+            generator.generate_test
+          end
+
+          after(:all) do
+            FileUtils.rm(File.expand_path('../../../FJBNotificationsViewModelTests.m', File.dirname(__FILE__)))
+            FileUtils.rm(File.expand_path('../../../FJBNotificationsApiInteractorTests.m', File.dirname(__FILE__)))
+          end
+
+          it 'has to generate ViewModels unit test files' do
+            file_path_test = File.expand_path('../../../FJBNotificationsViewModelTests.m', File.dirname(__FILE__))
+            expect(File).to exist(file_path_test)
+          end
+
+          it 'has to generate Interactors unit test files' do
+            file_path_test = File.expand_path('../../../FJBNotificationsApiInteractorTests.m', File.dirname(__FILE__))
+            expect(File).to exist(file_path_test)
+          end
         end
       end
     end

@@ -11,7 +11,7 @@ module IOSGen
 
       attr_reader :type, :file_spec, :destination
       attr_reader :view_model, :view_controller
-      attr_reader :factory, :formatter
+      attr_reader :factory, :formatter, :test_formatter
 
       def initialize(hash = {})
         @type = hash[:type]
@@ -22,11 +22,22 @@ module IOSGen
         view_model_formatter = Objc::ViewModelFormatter.new(interactor_formatter)
         view_controller_formatter = Objc::ViewControllerFormatter.new(view_model_formatter)
         @formatter = Objc::Formatter.new(view_controller_formatter, view_model_formatter, interactor_formatter)
+        @test_formatter = Objc::XctestcaseFormatter.new
         parse
       end
 
       def generate
-        generate_view_model
+        @formatter.generate do |file_name, template|
+          generate_template(file_name, template, @destination)
+          puts "[+] Created Source File: #{file_name}".green
+        end
+      end
+
+      def generate_test
+        generate_test_object(@view_model)
+        @view_model.interactors.each do |interactor|
+          generate_test_object(interactor)
+        end
       end
 
       private
@@ -41,19 +52,20 @@ module IOSGen
         @formatter.view_controller = @view_controller unless @view_controller.nil?
       end
 
-      def generate_view_model
-        @formatter.generate do |file_name, template|
-          generate_template(file_name, template, @destination)
-          puts "[+] Created #{file_name}".green
-        end
-      end
-
       def generate_template(name, template, destination = '.')
         path_template = File.expand_path("../../../#{template}", File.dirname(__FILE__))
         renderer = ERB.new(File.read(path_template))
         destination_path = "#{destination}#{name}"
         File.open(destination_path, 'w') do |f|
           f.write renderer.result(binding)
+        end
+      end
+
+      def generate_test_object(object)
+        @test_formatter.object = object
+        @test_formatter.generate do |file_name, template|
+          generate_template(file_name, template, @destination)
+          puts "[+] Created Test File: #{file_name}".green
         end
       end
     end

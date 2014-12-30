@@ -48,5 +48,4 @@ describe IOSGen::Generator::Objc::Formatter do
       expect { |b| formatter.generate(&b) }.to yield_control.exactly(8).times
     end
   end
-
 end

@@ -4,7 +4,7 @@ module IOSGen
       # Objective-C Interactor Formatter
       class InteractorFormatter
         # File Names Interactors
-        attr_reader :header_file_name, :_impl_file_name
+        attr_reader :header_file_name, :impl_file_name
         attr_reader :protocol_file_name
         # Interactor Protocol
         attr_reader :protocol_name
@@ -40,27 +40,32 @@ module IOSGen
         end
 
         def actions_header
-          actions = ''
-          action_formatter = ActionFormatter.new
-          @interactor.actions.each do |action|
-            actions += "#{action_formatter.generate_interface(action)}\n"
+          loop_actions do |formatter, action|
+            formatter.generate_interface(action)
           end
-          actions.chop
         end
 
         def actions_impl
-          actions = ''
-          action_formatter = ActionFormatter.new
-          @interactor.actions.each do |action|
-            actions += "#{action_formatter.generate_implementation(action)}\n"
+          loop_actions do |formatter, action|
+            formatter.generate_implementation(action)
           end
-          actions.chop
         end
 
         def generate(&block)
           block.call(protocol_file_name, 'templates/objc/InteractorProtocol.h.erb')
           block.call(header_file_name, 'templates/objc/Interactor.h.erb')
           block.call(impl_file_name, 'templates/objc/Interactor.m.erb')
+        end
+
+        private
+
+        def loop_actions
+          actions = ''
+          action_formatter = ActionFormatter.new
+          @interactor.actions.each do |action|
+            actions += "#{yield(action_formatter, action)}\n"
+          end
+          actions.chop
         end
       end
     end
