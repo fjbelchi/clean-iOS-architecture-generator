@@ -50,21 +50,15 @@ module IOSGen
         end
 
         def actions_header
-          actions = ''
-          action_formatter = ActionFormatter.new
-          @view_model.actions.each do |action|
-            actions += "#{action_formatter.generate_interface(action)}\n"
+          loop_actions do |formatter, action|
+            formatter.generate_interface(action)
           end
-          actions.chop
         end
 
         def actions_impl
-          actions = ''
-          action_formatter = ActionFormatter.new
-          @view_model.actions.each do |action|
-            actions += "#{action_formatter.generate_implementation(action)}\n"
+          loop_actions do |formatter, action|
+            formatter.generate_implementation(action)
           end
-          actions.chop
         end
 
         def generate(&block)
@@ -81,6 +75,15 @@ module IOSGen
             @interactor_formatter.interactor = interactor
             @interactor_formatter.generate(&block)
           end unless @view_model.interactors.nil?
+        end
+
+        def loop_actions
+          actions = ''
+          action_formatter = ActionFormatter.new
+          @view_model.actions.each do |action|
+            actions += "#{yield(action_formatter, action)}\n"
+          end
+          actions.chop
         end
       end
     end

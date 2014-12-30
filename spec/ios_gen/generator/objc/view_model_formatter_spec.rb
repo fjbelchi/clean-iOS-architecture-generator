@@ -120,6 +120,5 @@ describe IOSGen::Generator::Objc::ViewModelFormatter do
       expect(file_names[5]).to eq(formatter.interactor_formatter.impl_file_name)
       expect(templates[5]).to eq('templates/objc/Interactor.m.erb')
     end
-
   end
 end

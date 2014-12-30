@@ -14,9 +14,11 @@
 		FFC017831A5158CE008C4129 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC017821A5158CE008C4129 /* Images.xcassets */; };
 		FFC017861A5158CE008C4129 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC017841A5158CE008C4129 /* LaunchScreen.xib */; };
 		FFC017921A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */; };
-		FFC0179E1A515A28008C4129 /* FJBNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */; };
-		FFC017A31A515A4A008C4129 /* FJBNotificationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */; };
-		FFC017A81A515A54008C4129 /* FJBNotificationsApiInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */; };
+		FFC017B41A518596008C4129 /* FJBNotificationsApiInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017AB1A518596008C4129 /* FJBNotificationsApiInteractor.m */; };
+		FFC017B51A518596008C4129 /* FJBNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017AF1A518596008C4129 /* FJBNotificationsViewController.m */; };
+		FFC017B61A518596008C4129 /* FJBNotificationsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */; };
+		FFC017B81A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */; };
+		FFC017BC1A52B7DD008C4129 /* FJBNotificationsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +45,16 @@
 		FFC0178B1A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCleanArchitectureGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC017901A5158CE008C4129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSCleanArchitectureGeneratorTests.m; sourceTree = "<group>"; };
-		FFC0179C1A515A28008C4129 /* FJBNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewController.h; sourceTree = "<group>"; };
-		FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewController.m; sourceTree = "<group>"; };
-		FFC017A01A515A4A008C4129 /* FJBNotificationsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModel.h; sourceTree = "<group>"; };
-		FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModel.m; sourceTree = "<group>"; };
-		FFC017A21A515A4A008C4129 /* FJBNotificationsViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModelProtocol.h; sourceTree = "<group>"; };
-		FFC017A51A515A54008C4129 /* FJBNotificationsApiInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractor.h; sourceTree = "<group>"; };
-		FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsApiInteractor.m; sourceTree = "<group>"; };
-		FFC017A71A515A54008C4129 /* FJBNotificationsApiInteractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractorProtocol.h; sourceTree = "<group>"; };
+		FFC017AA1A518596008C4129 /* FJBNotificationsApiInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractor.h; sourceTree = "<group>"; };
+		FFC017AB1A518596008C4129 /* FJBNotificationsApiInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsApiInteractor.m; sourceTree = "<group>"; };
+		FFC017AC1A518596008C4129 /* FJBNotificationsApiInteractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsApiInteractorProtocol.h; sourceTree = "<group>"; };
+		FFC017AE1A518596008C4129 /* FJBNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewController.h; sourceTree = "<group>"; };
+		FFC017AF1A518596008C4129 /* FJBNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewController.m; sourceTree = "<group>"; };
+		FFC017B11A518596008C4129 /* FJBNotificationsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModel.h; sourceTree = "<group>"; };
+		FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModel.m; sourceTree = "<group>"; };
+		FFC017B31A518596008C4129 /* FJBNotificationsViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJBNotificationsViewModelProtocol.h; sourceTree = "<group>"; };
+		FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FJBNotificationsApiInteractorTests.m; path = Interactors/FJBNotificationsApiInteractorTests.m; sourceTree = "<group>"; };
+		FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJBNotificationsViewModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +96,9 @@
 		FFC017741A5158CE008C4129 /* iOSCleanArchitectureGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				FFC017A41A515A54008C4129 /* Interactors */,
-				FFC0179F1A515A4A008C4129 /* ViewModels */,
-				FFC0179B1A515A28008C4129 /* ViewControllers */,
+				FFC017A91A518596008C4129 /* Interactors */,
+				FFC017AD1A518596008C4129 /* ViewControllers */,
+				FFC017B01A518596008C4129 /* ViewModels */,
 				FFC017791A5158CE008C4129 /* AppDelegate.h */,
 				FFC0177A1A5158CE008C4129 /* AppDelegate.m */,
 				FFC0177C1A5158CE008C4129 /* ViewController.h */,
@@ -119,6 +123,8 @@
 		FFC0178E1A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFC017B91A5185F8008C4129 /* Interactors */,
+				FFC017BA1A52B7DC008C4129 /* ViewModels */,
 				FFC017911A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m */,
 				FFC0178F1A5158CE008C4129 /* Supporting Files */,
 			);
@@ -133,34 +139,50 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FFC0179B1A515A28008C4129 /* ViewControllers */ = {
+		FFC017A91A518596008C4129 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				FFC0179C1A515A28008C4129 /* FJBNotificationsViewController.h */,
-				FFC0179D1A515A28008C4129 /* FJBNotificationsViewController.m */,
-			);
-			path = ViewControllers;
-			sourceTree = SOURCE_ROOT;
-		};
-		FFC0179F1A515A4A008C4129 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FFC017A01A515A4A008C4129 /* FJBNotificationsViewModel.h */,
-				FFC017A11A515A4A008C4129 /* FJBNotificationsViewModel.m */,
-				FFC017A21A515A4A008C4129 /* FJBNotificationsViewModelProtocol.h */,
-			);
-			path = ViewModels;
-			sourceTree = SOURCE_ROOT;
-		};
-		FFC017A41A515A54008C4129 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				FFC017A51A515A54008C4129 /* FJBNotificationsApiInteractor.h */,
-				FFC017A61A515A54008C4129 /* FJBNotificationsApiInteractor.m */,
-				FFC017A71A515A54008C4129 /* FJBNotificationsApiInteractorProtocol.h */,
+				FFC017AA1A518596008C4129 /* FJBNotificationsApiInteractor.h */,
+				FFC017AB1A518596008C4129 /* FJBNotificationsApiInteractor.m */,
+				FFC017AC1A518596008C4129 /* FJBNotificationsApiInteractorProtocol.h */,
 			);
 			path = Interactors;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
+		};
+		FFC017AD1A518596008C4129 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017AE1A518596008C4129 /* FJBNotificationsViewController.h */,
+				FFC017AF1A518596008C4129 /* FJBNotificationsViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFC017B01A518596008C4129 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017B11A518596008C4129 /* FJBNotificationsViewModel.h */,
+				FFC017B21A518596008C4129 /* FJBNotificationsViewModel.m */,
+				FFC017B31A518596008C4129 /* FJBNotificationsViewModelProtocol.h */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FFC017B91A5185F8008C4129 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017B71A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m */,
+			);
+			name = Interactors;
+			sourceTree = "<group>";
+		};
+		FFC017BA1A52B7DC008C4129 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFC017BB1A52B7DC008C4129 /* FJBNotificationsViewModelTests.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -262,12 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC0179E1A515A28008C4129 /* FJBNotificationsViewController.m in Sources */,
+				FFC017B51A518596008C4129 /* FJBNotificationsViewController.m in Sources */,
 				FFC0177E1A5158CE008C4129 /* ViewController.m in Sources */,
 				FFC0177B1A5158CE008C4129 /* AppDelegate.m in Sources */,
-				FFC017A81A515A54008C4129 /* FJBNotificationsApiInteractor.m in Sources */,
-				FFC017A31A515A4A008C4129 /* FJBNotificationsViewModel.m in Sources */,
 				FFC017781A5158CE008C4129 /* main.m in Sources */,
+				FFC017B61A518596008C4129 /* FJBNotificationsViewModel.m in Sources */,
+				FFC017B41A518596008C4129 /* FJBNotificationsApiInteractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC017921A5158CE008C4129 /* iOSCleanArchitectureGeneratorTests.m in Sources */,
+				FFC017BC1A52B7DD008C4129 /* FJBNotificationsViewModelTests.m in Sources */,
+				FFC017B81A5185F3008C4129 /* FJBNotificationsApiInteractorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +484,7 @@
 				FFC017971A5158CE008C4129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFC017981A5158CE008C4129 /* Build configuration list for PBXNativeTarget "iOSCleanArchitectureGeneratorTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +493,7 @@
 				FFC0179A1A5158CE008C4129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

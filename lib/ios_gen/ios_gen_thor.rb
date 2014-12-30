@@ -7,11 +7,12 @@ class IOSGenThor < Thor
   end
 
   desc 'generate', 'Generate new code with spec file'
-  # method_option :destination, aliases: '-d', desc: 'destination path'
+  option :test, aliases: '-t', desc: 'Generate unit tests'
   # method_option :languague, aliases: '-l', desc: 'objc or swift'
   def generate(file_path)
     puts file_path
     generator = IOSGen::Generator::BaseGenerator.new(file_spec: file_path)
     generator.generate
+    generator.generate_test if options[:test]
   end
 end
