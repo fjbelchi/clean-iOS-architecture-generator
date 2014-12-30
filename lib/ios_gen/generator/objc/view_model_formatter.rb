@@ -68,11 +68,6 @@ module IOSGen
           generate_interactor(&block)
         end
 
-        def generate_test(&block)
-          block.call(test_file_name, 'templates/objc/XCTestCase.m.erb')
-          generate_interactor_test(&block)
-        end
-
         private
 
         def generate_interactor(&block)
