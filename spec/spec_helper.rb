@@ -1,8 +1,9 @@
 require 'simplecov'
 require 'coveralls'
-require './lib/iosgen'
+require 'thor'
+
+Dir['./lib/**/*.rb'].each { |f| require f }
+
 
 SimpleCov.start
 Coveralls.wear!
-
-Dir['./lib/ios_gen/**/**/*.rb'].each { |f| require f }
